@@ -1,0 +1,45 @@
+
+
+<html>
+<head>
+	<title>fileupload | mvc-showcase</title>
+	<link href="/spring-mvc-showcase/resources/form.css" rel="stylesheet"  type="text/css" />		
+	<script type="text/javascript" src="/spring-mvc-showcase/resources/jquery/1.6/jquery.js"></script>
+	<script type="text/javascript" src="/spring-mvc-showcase/resources/jqueryform/2.8/jquery.form.js"></script>	
+</head>
+<body>
+
+	<div id="fileuploadContent">
+		<h2>File Upload</h2>
+		<p>
+			See the <code>org.springframework.samples.mvc.fileupload</code> package for the @Controller code	
+		</p>
+		<!--
+		    File Uploads must include CSRF in the URL.
+		    See https://docs.spring.io/spring-security/site/docs/3.2.x/reference/htmlsingle/#csrf-multipart
+		-->
+		
+		<form id="fileuploadForm" action="fileupload?_csrf=<csrf-token>" method="POST" enctype="multipart/form-data" class="cleanform">
+			<div class="header">
+		  		<h2>Form</h2>
+		  		
+					<div id="message" class="success">File 'upload.txt' uploaded successfully</div>	  		
+		  		
+			</div>
+			<label for="file">File</label>
+			<input id="file" type="file" name="file" />
+			<p><button type="submit">Upload</button></p>		
+		</form>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('<input type="hidden" name="ajaxUpload" value="true" />').insertAfter($("#file"));
+				$("#fileuploadForm").ajaxForm({ success: function(html) {
+						$("#fileuploadContent").replaceWith(html);
+					}
+				});
+			});
+		</script>	
+	</div>
+
+</body>
+</html>

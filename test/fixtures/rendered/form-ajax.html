@@ -1,0 +1,98 @@
+
+
+
+
+
+	<div id="formsContent">
+		<h2>Forms</h2>
+		<p>
+			See the <code>org.springframework.samples.mvc.form</code> package for the @Controller code	
+		</p>
+		<form id="form" class="cleanform" action="/spring-mvc-showcase/form" method="post">
+			<div class="header">
+		  		<h2>Form</h2>
+		  		
+		  		
+		  			
+		  		
+			</div>
+		  	<fieldset>
+		  		<legend>Personal Info</legend>
+		  		<label for="name">
+		  			Name 
+		 		</label>
+		  		<input id="name" name="name" type="text" value=""/>
+	
+		  		<label for="age">
+		  			Age 
+		 		</label>
+		  		<input id="age" name="age" type="text" value="0"/>
+		  		
+		  		<label for="birthDate">
+		  			Birth Date (in form yyyy-mm-dd) 
+		 		</label>
+		  		<input id="birthDate" name="birthDate" type="text" value=""/>
+		  		 
+		  		<label for="phone">
+		  			Phone (in form (###) ###-####) 
+		  		</label>
+		  		<input id="phone" name="phone" type="text" value=""/>
+	
+		  		<label for="currency">
+		  			Currency (in form $#.##) 
+		  		</label>
+		  		<input id="currency" name="currency" type="text" value=""/>
+	
+		  		<label for="percent">
+		  			Percentage (in form ##%) 
+		  		</label>
+		  		<input id="percent" name="percent" type="text" value=""/>
+	
+		  	</fieldset>
+	
+			<fieldset>
+				<legend>Inquiry</legend>
+				<label for="inquiry">
+					Type (select one)
+				</label>
+				<select id="inquiry" name="inquiry">
+					<option value="comment">Comment</option>
+					<option value="feedback">Feedback</option>
+					<option value="suggestion">Suggestion</option>
+				</select>
+				
+		  		<label for="inquiryDetails">
+		  			Details
+		  		</label>
+		  		<textarea id="inquiryDetails" name="inquiryDetails">
+</textarea>
+		  	</fieldset>
+	
+			<fieldset class="checkbox">
+				<legend>Request Additional Info</legend>
+				<label><input id="additionalInfomvc1" name="additionalInfo[mvc]" type="checkbox" value="true"/><input type="hidden" name="_additionalInfo[mvc]" value="on"/>on Spring MVC</label>
+				<label><input id="additionalInfojava1" name="additionalInfo[java]" type="checkbox" value="true"/><input type="hidden" name="_additionalInfo[java]" value="on"/>on Java (4-ever)</label>				
+			</fieldset>
+		  		  	
+			<fieldset class="radio">
+				<legend>Subscribe to Newsletter?</legend>
+				<label><input id="subscribeNewsletter1" name="subscribeNewsletter" type="radio" value="true"/>Yes</label>
+				<label><input id="subscribeNewsletter2" name="subscribeNewsletter" type="radio" value="false" checked="checked"/> No</label>
+			</fieldset>
+	
+			<p><button type="submit">Submit</button></p>
+		<div>
+<input type="hidden" name="_csrf" value="<csrf-token>" />
+</div></form>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$("#form").submit(function() {  
+					$.post($(this).attr("action"), $(this).serialize(), function(html) {
+						$("#formsContent").replaceWith(html);
+						$('html, body').animate({ scrollTop: $("#message").offset().top }, 500);
+					});
+					return false;  
+				});			
+			});
+		</script>
+	</div>

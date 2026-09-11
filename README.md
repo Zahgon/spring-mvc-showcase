@@ -30,12 +30,34 @@ If this is your first time using Github, review https://help.github.com to learn
 
 To run the application:
 -------------------	
-From the command line with Maven:
+From the command line with npm:
 
     $ cd spring-mvc-showcase
-    $ mvn jetty:run 
+    $ npm install
+    $ npm start
 
 Access the deployed web application at: http://localhost:8080/spring-mvc-showcase/
+
+`PORT` and `CONTEXT_PATH` override the two defaults.
+
+To run the tests:
+-------------------
+
+    $ npm test              # the suite
+    $ npm run coverage      # the suite with a coverage report
+    $ npm run typecheck     # the compiler, with no emit
+
+TypeScript port
+-------------------
+
+This is a TypeScript port of the original Java application. It keeps the
+showcase's behaviour rather than its dependencies: the slice of Spring MVC the
+showcase exercises — request mapping, argument resolution, data binding, type
+conversion, message conversion, view resolution, async dispatch and exception
+handling — is reimplemented under `src/framework`, and the showcase's own
+controllers sit above it under `src/samples`. The JSP views are translated into
+`src/webapp/views`, and `src/main.ts` takes the place of the servlet container.
+See `truth.md` alongside the repository for what was verified and how.
 
 Note:
 -------------------

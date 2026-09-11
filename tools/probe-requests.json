@@ -1,0 +1,430 @@
+[
+  {
+    "label": "GET /simple",
+    "method": "GET",
+    "uri": "/simple"
+  },
+  {
+    "label": "GET /simple/revisited",
+    "method": "GET",
+    "uri": "/simple/revisited",
+    "headers": {
+      "Accept": "text/plain"
+    }
+  },
+  {
+    "label": "GET /mapping/path",
+    "method": "GET",
+    "uri": "/mapping/path"
+  },
+  {
+    "label": "GET /mapping/path/wildcard",
+    "method": "GET",
+    "uri": "/mapping/path/wildcard"
+  },
+  {
+    "label": "GET /mapping/method",
+    "method": "GET",
+    "uri": "/mapping/method"
+  },
+  {
+    "label": "GET /mapping/parameter?foo=bar",
+    "method": "GET",
+    "uri": "/mapping/parameter?foo=bar"
+  },
+  {
+    "label": "GET /mapping/parameter",
+    "method": "GET",
+    "uri": "/mapping/parameter"
+  },
+  {
+    "label": "GET /mapping/header +FooHeader",
+    "method": "GET",
+    "uri": "/mapping/header",
+    "headers": {
+      "FooHeader": "foo"
+    }
+  },
+  {
+    "label": "GET /mapping/header",
+    "method": "GET",
+    "uri": "/mapping/header"
+  },
+  {
+    "label": "POST /mapping/consumes",
+    "method": "POST",
+    "uri": "/mapping/consumes",
+    "contentType": "application/json",
+    "body": "{ \"foo\": \"bar\", \"fruit\": \"apple\" }"
+  },
+  {
+    "label": "GET /mapping/produces accept json",
+    "method": "GET",
+    "uri": "/mapping/produces",
+    "headers": {
+      "Accept": "application/json"
+    }
+  },
+  {
+    "label": "GET /mapping/produces accept xml",
+    "method": "GET",
+    "uri": "/mapping/produces",
+    "headers": {
+      "Accept": "application/xml"
+    }
+  },
+  {
+    "label": "GET /mapping/produces.json",
+    "method": "GET",
+    "uri": "/mapping/produces.json"
+  },
+  {
+    "label": "GET /mapping/produces.xml",
+    "method": "GET",
+    "uri": "/mapping/produces.xml"
+  },
+  {
+    "label": "GET /data/param?foo=bar",
+    "method": "GET",
+    "uri": "/data/param?foo=bar"
+  },
+  {
+    "label": "GET /data/group",
+    "method": "GET",
+    "uri": "/data/group"
+  },
+  {
+    "label": "GET /data/path/foo",
+    "method": "GET",
+    "uri": "/data/path/foo"
+  },
+  {
+    "label": "GET /data/matrixvars;foo=bar/simple",
+    "method": "GET",
+    "uri": "/data/matrixvars;foo=bar/simple"
+  },
+  {
+    "label": "GET /data/matrixvars;foo=bar1/multiple;foo=bar2",
+    "method": "GET",
+    "uri": "/data/matrixvars;foo=bar1/multiple;foo=bar2"
+  },
+  {
+    "label": "GET /data/header accept all",
+    "method": "GET",
+    "uri": "/data/header",
+    "headers": {
+      "Accept": "*/*"
+    }
+  },
+  {
+    "label": "POST /data/body",
+    "method": "POST",
+    "uri": "/data/body",
+    "contentType": "text/plain",
+    "body": "foo"
+  },
+  {
+    "label": "POST /data/entity",
+    "method": "POST",
+    "uri": "/data/entity",
+    "contentType": "text/plain",
+    "body": "foo"
+  },
+  {
+    "label": "GET /data/custom",
+    "method": "GET",
+    "uri": "/data/custom"
+  },
+  {
+    "label": "GET /data/standard/request",
+    "method": "GET",
+    "uri": "/data/standard/request"
+  },
+  {
+    "label": "POST /data/standard/request/reader",
+    "method": "POST",
+    "uri": "/data/standard/request/reader",
+    "contentType": "text/plain",
+    "body": "foo"
+  },
+  {
+    "label": "POST /data/standard/request/is",
+    "method": "POST",
+    "uri": "/data/standard/request/is",
+    "contentType": "text/plain",
+    "body": "foo"
+  },
+  {
+    "label": "GET /data/standard/response",
+    "method": "GET",
+    "uri": "/data/standard/response"
+  },
+  {
+    "label": "GET /data/standard/response/writer",
+    "method": "GET",
+    "uri": "/data/standard/response/writer"
+  },
+  {
+    "label": "GET /data/standard/response/os",
+    "method": "GET",
+    "uri": "/data/standard/response/os"
+  },
+  {
+    "label": "GET /data/standard/session",
+    "method": "GET",
+    "uri": "/data/standard/session"
+  },
+  {
+    "label": "GET /response/annotation",
+    "method": "GET",
+    "uri": "/response/annotation"
+  },
+  {
+    "label": "GET /response/charset/accept",
+    "method": "GET",
+    "uri": "/response/charset/accept",
+    "headers": {
+      "Accept": "text/plain;charset=UTF-8"
+    }
+  },
+  {
+    "label": "GET /response/charset/produce",
+    "method": "GET",
+    "uri": "/response/charset/produce"
+  },
+  {
+    "label": "GET /response/entity/status",
+    "method": "GET",
+    "uri": "/response/entity/status"
+  },
+  {
+    "label": "GET /response/entity/headers",
+    "method": "GET",
+    "uri": "/response/entity/headers"
+  },
+  {
+    "label": "POST /messageconverters/string",
+    "method": "POST",
+    "uri": "/messageconverters/string",
+    "body": "foo"
+  },
+  {
+    "label": "GET /messageconverters/string",
+    "method": "GET",
+    "uri": "/messageconverters/string"
+  },
+  {
+    "label": "POST /messageconverters/form",
+    "method": "POST",
+    "uri": "/messageconverters/form",
+    "contentType": "application/x-www-form-urlencoded",
+    "parameters": {
+      "foo": [
+        "bar"
+      ],
+      "fruit": [
+        "apple"
+      ]
+    }
+  },
+  {
+    "label": "GET /messageconverters/form",
+    "method": "GET",
+    "uri": "/messageconverters/form"
+  },
+  {
+    "label": "POST /messageconverters/xml",
+    "method": "POST",
+    "uri": "/messageconverters/xml",
+    "contentType": "application/xml",
+    "body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><javaBean><foo>bar</foo><fruit>apple</fruit></javaBean>"
+  },
+  {
+    "label": "GET /messageconverters/xml",
+    "method": "GET",
+    "uri": "/messageconverters/xml",
+    "headers": {
+      "Accept": "application/xml"
+    }
+  },
+  {
+    "label": "POST /messageconverters/json",
+    "method": "POST",
+    "uri": "/messageconverters/json",
+    "contentType": "application/json",
+    "body": "{ \"foo\": \"bar\", \"fruit\": \"apple\" }"
+  },
+  {
+    "label": "GET /messageconverters/json",
+    "method": "GET",
+    "uri": "/messageconverters/json",
+    "headers": {
+      "Accept": "application/json"
+    }
+  },
+  {
+    "label": "POST /messageconverters/atom",
+    "method": "POST",
+    "uri": "/messageconverters/atom",
+    "contentType": "application/atom+xml",
+    "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><feed xmlns=\"http://www.w3.org/2005/Atom\"><title>My Atom feed</title></feed>"
+  },
+  {
+    "label": "GET /messageconverters/atom",
+    "method": "GET",
+    "uri": "/messageconverters/atom",
+    "headers": {
+      "Accept": "application/atom+xml"
+    }
+  },
+  {
+    "label": "POST /messageconverters/rss",
+    "method": "POST",
+    "uri": "/messageconverters/rss",
+    "contentType": "application/rss+xml",
+    "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?> <rss version=\"2.0\"><channel><title>My RSS feed</title></channel></rss>"
+  },
+  {
+    "label": "GET /messageconverters/rss",
+    "method": "GET",
+    "uri": "/messageconverters/rss",
+    "headers": {
+      "Accept": "application/rss+xml"
+    }
+  },
+  {
+    "label": "GET /exception",
+    "method": "GET",
+    "uri": "/exception"
+  },
+  {
+    "label": "GET /global-exception",
+    "method": "GET",
+    "uri": "/global-exception"
+  },
+  {
+    "label": "GET /validate ok",
+    "method": "GET",
+    "uri": "/validate?number=3&date=2029-07-04"
+  },
+  {
+    "label": "GET /validate errors",
+    "method": "GET",
+    "uri": "/validate?number=3&date=2010-07-01"
+  },
+  {
+    "label": "GET /views/html",
+    "method": "GET",
+    "uri": "/views/html"
+  },
+  {
+    "label": "GET /views/viewName",
+    "method": "GET",
+    "uri": "/views/viewName"
+  },
+  {
+    "label": "GET /views/pathVariables/bar/apple",
+    "method": "GET",
+    "uri": "/views/pathVariables/bar/apple"
+  },
+  {
+    "label": "GET /views/dataBinding/bar/apple",
+    "method": "GET",
+    "uri": "/views/dataBinding/bar/apple"
+  },
+  {
+    "label": "GET /async/callable/response-body",
+    "method": "GET",
+    "uri": "/async/callable/response-body"
+  },
+  {
+    "label": "GET /async/callable/view",
+    "method": "GET",
+    "uri": "/async/callable/view"
+  },
+  {
+    "label": "GET /async/callable/exception",
+    "method": "GET",
+    "uri": "/async/callable/exception"
+  },
+  {
+    "label": "GET /async/deferred-result/response-body",
+    "method": "GET",
+    "uri": "/async/deferred-result/response-body"
+  },
+  {
+    "label": "GET /async/deferred-result/exception",
+    "method": "GET",
+    "uri": "/async/deferred-result/exception"
+  },
+  {
+    "label": "GET /async/deferred-result/model-and-view",
+    "method": "GET",
+    "uri": "/async/deferred-result/model-and-view"
+  },
+  {
+    "label": "POST /fileupload",
+    "method": "POST",
+    "uri": "/fileupload",
+    "multipart": {
+      "name": "file",
+      "filename": "orig",
+      "content": "bar"
+    }
+  },
+  {
+    "label": "GET /",
+    "method": "GET",
+    "uri": "/"
+  },
+  {
+    "label": "GET /class-mapping/path",
+    "method": "GET",
+    "uri": "/class-mapping/path"
+  },
+  {
+    "label": "GET /class-mapping/path/wildcard",
+    "method": "GET",
+    "uri": "/class-mapping/path/wildcard"
+  },
+  {
+    "label": "GET /class-mapping/method",
+    "method": "GET",
+    "uri": "/class-mapping/method"
+  },
+  {
+    "label": "GET /class-mapping/parameter?foo=bar",
+    "method": "GET",
+    "uri": "/class-mapping/parameter?foo=bar"
+  },
+  {
+    "label": "GET /class-mapping/parameter",
+    "method": "GET",
+    "uri": "/class-mapping/parameter"
+  },
+  {
+    "label": "GET /class-mapping/header +FooHeader",
+    "method": "GET",
+    "uri": "/class-mapping/header",
+    "headers": {
+      "FooHeader": "foo"
+    }
+  },
+  {
+    "label": "GET /class-mapping/notheader",
+    "method": "GET",
+    "uri": "/class-mapping/notheader"
+  },
+  {
+    "label": "POST /class-mapping/consumes",
+    "method": "POST",
+    "uri": "/class-mapping/consumes",
+    "contentType": "application/json",
+    "body": "{\"foo\":\"bar\"}"
+  },
+  {
+    "label": "GET /class-mapping/produces",
+    "method": "GET",
+    "uri": "/class-mapping/produces"
+  }
+]

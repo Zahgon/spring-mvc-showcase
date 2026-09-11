@@ -1,0 +1,111 @@
+
+
+
+
+
+<html>
+<head>
+	<title>forms | mvc-showcase</title>
+	<link href="/spring-mvc-showcase/resources/form.css" rel="stylesheet"  type="text/css" />		
+	<script type="text/javascript" src="/spring-mvc-showcase/resources/jquery/1.6/jquery.js"></script>
+</head>
+<body>
+
+	<div id="formsContent">
+		<h2>Forms</h2>
+		<p>
+			See the <code>org.springframework.samples.mvc.form</code> package for the @Controller code	
+		</p>
+		<form id="form" class="cleanform" action="/spring-mvc-showcase/form" method="post">
+			<div class="header">
+		  		<h2>Form</h2>
+		  		
+					<div id="message" class="success">Form submitted successfully.  Bound properties name=&#039;Bob&#039;, age=30, birthDate=Tue Jan 01 00:00:00 IST 1980, phone=&#039;1234567890&#039;, currency=4.20, percent=0.15, inquiry=feedback, inquiryDetails=&#039;hi there&#039;, subscribeNewsletter=true, additionalInfo={java=null, mvc=true}</div>
+		  		
+		  		
+		  			
+		  		
+			</div>
+		  	<fieldset>
+		  		<legend>Personal Info</legend>
+		  		<label for="name">
+		  			Name 
+		 		</label>
+		  		<input id="name" name="name" type="text" value="Bob"/>
+	
+		  		<label for="age">
+		  			Age 
+		 		</label>
+		  		<input id="age" name="age" type="text" value="30"/>
+		  		
+		  		<label for="birthDate">
+		  			Birth Date (in form yyyy-mm-dd) 
+		 		</label>
+		  		<input id="birthDate" name="birthDate" type="text" value="1980-01-01"/>
+		  		 
+		  		<label for="phone">
+		  			Phone (in form (###) ###-####) 
+		  		</label>
+		  		<input id="phone" name="phone" type="text" value="(123) 456-7890"/>
+	
+		  		<label for="currency">
+		  			Currency (in form $#.##) 
+		  		</label>
+		  		<input id="currency" name="currency" type="text" value="$4.20"/>
+	
+		  		<label for="percent">
+		  			Percentage (in form ##%) 
+		  		</label>
+		  		<input id="percent" name="percent" type="text" value="15%"/>
+	
+		  	</fieldset>
+	
+			<fieldset>
+				<legend>Inquiry</legend>
+				<label for="inquiry">
+					Type (select one)
+				</label>
+				<select id="inquiry" name="inquiry">
+					<option value="comment">Comment</option>
+					<option value="feedback" selected="selected">Feedback</option>
+					<option value="suggestion">Suggestion</option>
+				</select>
+				
+		  		<label for="inquiryDetails">
+		  			Details
+		  		</label>
+		  		<textarea id="inquiryDetails" name="inquiryDetails">
+hi there</textarea>
+		  	</fieldset>
+	
+			<fieldset class="checkbox">
+				<legend>Request Additional Info</legend>
+				<label><input id="additionalInfomvc1" name="additionalInfo[mvc]" type="checkbox" value="true" checked="checked"/><input type="hidden" name="_additionalInfo[mvc]" value="on"/>on Spring MVC</label>
+				<label><input id="additionalInfojava1" name="additionalInfo[java]" type="checkbox" value="true"/><input type="hidden" name="_additionalInfo[java]" value="on"/>on Java (4-ever)</label>				
+			</fieldset>
+		  		  	
+			<fieldset class="radio">
+				<legend>Subscribe to Newsletter?</legend>
+				<label><input id="subscribeNewsletter1" name="subscribeNewsletter" type="radio" value="true" checked="checked"/>Yes</label>
+				<label><input id="subscribeNewsletter2" name="subscribeNewsletter" type="radio" value="false"/> No</label>
+			</fieldset>
+	
+			<p><button type="submit">Submit</button></p>
+		<div>
+<input type="hidden" name="_csrf" value="<csrf-token>" />
+</div></form>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$("#form").submit(function() {  
+					$.post($(this).attr("action"), $(this).serialize(), function(html) {
+						$("#formsContent").replaceWith(html);
+						$('html, body').animate({ scrollTop: $("#message").offset().top }, 500);
+					});
+					return false;  
+				});			
+			});
+		</script>
+	</div>
+
+</body>
+</html>

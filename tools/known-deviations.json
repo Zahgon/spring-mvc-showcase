@@ -1,0 +1,5 @@
+{
+  "GET /data/standard/request": "The handler prints the container's request object. In the original that is Spring's own org.springframework.mock.web.MockHttpServletRequest; the port has its own request class and prints its own name rather than claiming to be Spring's. The shape (fully-qualified name, '@', identity hash) is reproduced.",
+  "GET /data/standard/response": "Same as /data/standard/request, for MockHttpServletResponse.",
+  "GET /data/standard/session": "Same as /data/standard/request, for MockHttpSession."
+}

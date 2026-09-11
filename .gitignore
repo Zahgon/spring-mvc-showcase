@@ -7,3 +7,30 @@ target
 src/main/webapp/META-INF
 .idea
 *.iml
+
+### Node / TypeScript ###
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Test / coverage output
+coverage/
+.vitest/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment
+.env
+.env.*
+!.env.example
+
+### Task harness ###
+instruction.md
+truth.md
+test.patch
+fix.patch
+golden.patch
